@@ -1,0 +1,103 @@
+{
+  "version": 2,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "5d5299c37c72f8ee3e7f5434e7044f3a5f00f54517f06527a5e96cdd6ba4a268",
+      "vout": 33,
+      "prevout": {
+        "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+        "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+        "scriptpubkey_type": "v1_p2tr",
+        "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+        "value": 160000
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "66f4db6116b81d14dd6373af4ec6d1fe03650699c8bb79aab2ec8326d941ed6ef8d88b7e6525e06a7148f644c5b4d04b0d4a6701c41dbab26f507d7d196739e2"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "5120c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 c40919634aaefb1ce46941cdc956143bb41faa51ad40f96f2266139fd85d7667",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pcsy3jc624ma3eerfg8xuj4s58w6pl2j344q0jmezvcfelkzawenseqjcam",
+      "value": 144786
+    }
+  ]
+}

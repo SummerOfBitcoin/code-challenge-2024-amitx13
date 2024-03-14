@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "8fbf999c7590d881bbed23ab4a98830fa568520b99ba5f497d0dd5717821e080",
+      "vout": 53,
+      "prevout": {
+        "scriptpubkey": "0014fce7d9ae5b3d6b6c78c00d3e805b839c273b9cb3",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 fce7d9ae5b3d6b6c78c00d3e805b839c273b9cb3",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qlnnantjm844kc7xqp5lgqkurnsnnh89nq97wz7",
+        "value": 5107
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "304402207a59f4447404b694b62517a33d378070bfba8b60c7bc5b2c26446ed0d95abb60022024572cf4c85c957d8b87f251554ec70b55591f309bf97731378329d1576da19c01",
+        "020d2bc058b9266bd5418d0b82bf60dc760dc0b91cf2bb500bfcef79c67d6e2249"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967293
+    },
+    {
+      "txid": "78e1c85f025f3dbb8ba701a61c467cb5ea5a87d6654f39bb8a26b511e4fba433",
+      "vout": 1,
+      "prevout": {
+        "scriptpubkey": "0014fce7d9ae5b3d6b6c78c00d3e805b839c273b9cb3",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 fce7d9ae5b3d6b6c78c00d3e805b839c273b9cb3",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qlnnantjm844kc7xqp5lgqkurnsnnh89nq97wz7",
+        "value": 6898
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "304402200cf5226426dc54be93c395966b21134233c392c30cca3957e27858cba1ff3019022025fb7d821a53c01c934c3c4167a719cce54377a939afaa9d5d5c5406d000d62001",
+        "020d2bc058b9266bd5418d0b82bf60dc760dc0b91cf2bb500bfcef79c67d6e2249"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967293
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "0014668e3696ecfafbcfbfcf292e9af38828b8012fb2",
+      "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 668e3696ecfafbcfbfcf292e9af38828b8012fb2",
+      "scriptpubkey_type": "v0_p2wpkh",
+      "scriptpubkey_address": "bc1qv68rd9hvltaul0709yhf4uug9zuqztajrcnt6d",
+      "value": 10061
+    }
+  ]
+}

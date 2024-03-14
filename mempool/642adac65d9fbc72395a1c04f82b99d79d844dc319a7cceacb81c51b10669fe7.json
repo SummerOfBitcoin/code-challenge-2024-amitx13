@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "be20dc00386bec50f38519bf531b230d608fb4485ec47bd7a17b65d3faa8434e",
+      "vout": 11,
+      "prevout": {
+        "scriptpubkey": "001463e1d2644f06f643e96471eef15e11f51a6ffc42",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 63e1d2644f06f643e96471eef15e11f51a6ffc42",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qv0sayez0qmmy86tyw8h0zhs375dxllzzdtje96",
+        "value": 6375177
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "3045022100f35fb010015f34e95e35baa31161786d9770ca30ba59527ec458f5e4a1633478022054dc8bc8d448fc0f53ae91d5f28223343c54bb36473f87942349e02fdb0e29ed01",
+        "03075efc01c22f18b8128cc801ed9648afb389086cb36bd6cde388e9be875310d2"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    },
+    {
+      "txid": "d3916c78ac1ee5b4fdba0c509a90907f61065bd7f486c5beb44afa9867545473",
+      "vout": 8,
+      "prevout": {
+        "scriptpubkey": "00144405e98904318ffef2bbe8d373570637a6884c2d",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 4405e98904318ffef2bbe8d373570637a6884c2d",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qgsz7nzgyxx8lau4marfhx4cxx7ngsnpdkjtgmp",
+        "value": 7061777
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "3044022033a31440bfecece45daf6214ecbf714eb19951d1143816d7ff0c1b5e023b147502207fcc8627cf863f5fdd7350283b05a17d92bae6d589a41681c89c1864c556ca2b01",
+        "03e62e3b3f31e658d18f723d616ebf297bc6469702073696579b6ab703610157cc"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "0014937e71604362e346b85bfbe380ff51e157c4f7bc",
+      "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 937e71604362e346b85bfbe380ff51e157c4f7bc",
+      "scriptpubkey_type": "v0_p2wpkh",
+      "scriptpubkey_address": "bc1qjdl8zczrvt35dwzml03cpl63u9tufaautqwkt4",
+      "value": 5732931
+    },
+    {
+      "scriptpubkey": "00141e1c7654cdbf548857cbdf11970b43b65e6745ea",
+      "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 1e1c7654cdbf548857cbdf11970b43b65e6745ea",
+      "scriptpubkey_type": "v0_p2wpkh",
+      "scriptpubkey_address": "bc1qrcw8v4xdha2gs47tmugewz6rke0xw302037dhn",
+      "value": 7698668
+    }
+  ]
+}

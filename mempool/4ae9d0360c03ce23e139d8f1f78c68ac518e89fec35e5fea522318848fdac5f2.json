@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "002378a439309602191e76d57eaa1886b531ee31bfec5a78fe97d618112e3ab5",
+      "vout": 2,
+      "prevout": {
+        "scriptpubkey": "001467c1b3b842a64187f773550af9e47d678bd68774",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 67c1b3b842a64187f773550af9e47d678bd68774",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qvlqm8wzz5eqc0amn2590nerav79adpm5d7n5l5",
+        "value": 84539
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "304402207f7ff01fcd1f9f2dd8b48761cb917ee818bb33137697719cad6155e5101b5684022055992986ebf8e85f9333e821550812e1708712f6ce5f2508d8868396184f184901",
+        "023adb3345d1e0bebce877b0a69dcbfbffb5c3ec177d1760d16f3d95dd45593d74"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    },
+    {
+      "txid": "401f26105dee5e59a78518eafa96ba73f1cdbca4bc0fe73ded7bd09546e7128d",
+      "vout": 14,
+      "prevout": {
+        "scriptpubkey": "001467c1b3b842a64187f773550af9e47d678bd68774",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 67c1b3b842a64187f773550af9e47d678bd68774",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qvlqm8wzz5eqc0amn2590nerav79adpm5d7n5l5",
+        "value": 892695
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "304402207acb84e95a3c248c73762f607134659852721e555660666fdce46dd496f5a46602207b65b26db2ebce0573a1b188ae9329ca9b5d3f5e85824578bdbfac0450032db601",
+        "023adb3345d1e0bebce877b0a69dcbfbffb5c3ec177d1760d16f3d95dd45593d74"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "a9143159ac50318bb9a5212daecce503dad220f91f6487",
+      "scriptpubkey_asm": "OP_HASH160 OP_PUSHBYTES_20 3159ac50318bb9a5212daecce503dad220f91f64 OP_EQUAL",
+      "scriptpubkey_type": "p2sh",
+      "scriptpubkey_address": "36BxTYFMz6uPGeh8Etb3zUDXcX55ffau3d",
+      "value": 972401
+    }
+  ]
+}

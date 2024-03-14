@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "bd108bdf1c25ab0b0095d4a0cc24e1a46160bc446d62e50528b69387af70e5ca",
+      "vout": 2,
+      "prevout": {
+        "scriptpubkey": "a914b321cc76fb438182ec9726943f8a46bbd02a8b8287",
+        "scriptpubkey_asm": "OP_HASH160 OP_PUSHBYTES_20 b321cc76fb438182ec9726943f8a46bbd02a8b82 OP_EQUAL",
+        "scriptpubkey_type": "p2sh",
+        "scriptpubkey_address": "3J2BNFn3UDT6qb4MX7gj2wH1kwZZSG5aj4",
+        "value": 17959
+      },
+      "scriptsig": "160014731ae3552a43d884678076179e7ed53669d15321",
+      "scriptsig_asm": "OP_PUSHBYTES_22 0014731ae3552a43d884678076179e7ed53669d15321",
+      "witness": [
+        "3045022100bfd9deee2b9448e67bacf189714b203bb007b57e1b3be67967ef7c5314390c540220520c455c611349b6bb74b7378aa39680391e49c3b61fb7de10aa6853ece5825901",
+        "03545cc84c0e290ceaef9f025b65e7f2c2987c30923d8169c5fea8644ad8f7b28e"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967293,
+      "inner_redeemscript_asm": "OP_0 OP_PUSHBYTES_20 731ae3552a43d884678076179e7ed53669d15321"
+    },
+    {
+      "txid": "7cfe72520f916f5e46ecfbc0b732efdd71af307ff16bd2e2239150f008e08c61",
+      "vout": 2,
+      "prevout": {
+        "scriptpubkey": "a914b321cc76fb438182ec9726943f8a46bbd02a8b8287",
+        "scriptpubkey_asm": "OP_HASH160 OP_PUSHBYTES_20 b321cc76fb438182ec9726943f8a46bbd02a8b82 OP_EQUAL",
+        "scriptpubkey_type": "p2sh",
+        "scriptpubkey_address": "3J2BNFn3UDT6qb4MX7gj2wH1kwZZSG5aj4",
+        "value": 69655
+      },
+      "scriptsig": "160014731ae3552a43d884678076179e7ed53669d15321",
+      "scriptsig_asm": "OP_PUSHBYTES_22 0014731ae3552a43d884678076179e7ed53669d15321",
+      "witness": [
+        "304402200d857ad277886fc638d5550f58125b3a3708ed7d6bf5fe5d6be4e95da4f63a2d02205fb6ff74e551dc710e8310e99cd2106513b70953ce44d85d287bc51e63437e0a01",
+        "03545cc84c0e290ceaef9f025b65e7f2c2987c30923d8169c5fea8644ad8f7b28e"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967293,
+      "inner_redeemscript_asm": "OP_0 OP_PUSHBYTES_20 731ae3552a43d884678076179e7ed53669d15321"
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "a91497a37a77743394091c921d3f5724a9ba08d6683987",
+      "scriptpubkey_asm": "OP_HASH160 OP_PUSHBYTES_20 97a37a77743394091c921d3f5724a9ba08d66839 OP_EQUAL",
+      "scriptpubkey_type": "p2sh",
+      "scriptpubkey_address": "3FWooBpwv9nvAhjvWUKkQRdomAVBYguGzo",
+      "value": 84239
+    }
+  ]
+}

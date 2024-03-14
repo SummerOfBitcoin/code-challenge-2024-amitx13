@@ -1,0 +1,58 @@
+{
+  "version": 2,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "ebf571e9785d9d9dacbefe0ca76ced27c18f68789b0acf90f3515035f446a7c6",
+      "vout": 0,
+      "prevout": {
+        "scriptpubkey": "5120b6c367bd691dbfc4834732faf25ae57e08bce54e0b59a612ba16fe9464f05bc7",
+        "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 b6c367bd691dbfc4834732faf25ae57e08bce54e0b59a612ba16fe9464f05bc7",
+        "scriptpubkey_type": "v1_p2tr",
+        "scriptpubkey_address": "bc1pkmpk00tfrklufq68xta0ykh90cytee2wpdv6vy46zmlfge8st0rspd6sxw",
+        "value": 10000
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "caa59bba3a20851bf56d4f86b14f36fccbc0515878d3c811781bf90d94600f0a8073cd88854ce406c9dc286443dce78e2357336de6fe59c796ee62fc4bfc4566"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967293
+    },
+    {
+      "txid": "9f64ab6ea0eb553a77eac2ef93f1b136bc41a71e146c3241093e7b545665bb35",
+      "vout": 1,
+      "prevout": {
+        "scriptpubkey": "5120b6c367bd691dbfc4834732faf25ae57e08bce54e0b59a612ba16fe9464f05bc7",
+        "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 b6c367bd691dbfc4834732faf25ae57e08bce54e0b59a612ba16fe9464f05bc7",
+        "scriptpubkey_type": "v1_p2tr",
+        "scriptpubkey_address": "bc1pkmpk00tfrklufq68xta0ykh90cytee2wpdv6vy46zmlfge8st0rspd6sxw",
+        "value": 753183
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "c62a8017f3cb23f2d33d32aed2bf85b808a1c44b3b04dc7fcd806110165fc232d6ce685384cadcf984f760d8b06d1f97d878b3b5a07b053b12f2cbff30e8beaf"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967293
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "51203ae4c832cadcc59d8f6beb00de42f3ecc1304e804bbf1897c0e51fb234bc2aaf",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 3ae4c832cadcc59d8f6beb00de42f3ecc1304e804bbf1897c0e51fb234bc2aaf",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1p8tjvsvk2mnzemrmtavqdushnanqnqn5qfwl3397qu50myd9u92hsrqzzwc",
+      "value": 10000
+    },
+    {
+      "scriptpubkey": "5120b6c367bd691dbfc4834732faf25ae57e08bce54e0b59a612ba16fe9464f05bc7",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 b6c367bd691dbfc4834732faf25ae57e08bce54e0b59a612ba16fe9464f05bc7",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pkmpk00tfrklufq68xta0ykh90cytee2wpdv6vy46zmlfge8st0rspd6sxw",
+      "value": 750427
+    }
+  ]
+}

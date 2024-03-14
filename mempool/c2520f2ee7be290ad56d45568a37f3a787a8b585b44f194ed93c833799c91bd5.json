@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "66eb125f5413d6433fa4edb43694290a0763ca86742eb6a8fdd11782fbd63524",
+      "vout": 0,
+      "prevout": {
+        "scriptpubkey": "00146e85f31d7faf50c47ba7287e99762af4c8c60327",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 6e85f31d7faf50c47ba7287e99762af4c8c60327",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qd6zlx8tl4agvg7a89plfja327nyvvqe85z8w5h",
+        "value": 13100
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "3044022030a0dc06582f754545ce67d02439f3f1ed306ebfdbc672e5101153286bc6ff37022001094c4b82a32adf26478d95356efafa8d1a3a7a8b062f6b8df1f0811122580101",
+        "037d7d52d662177e59e79f94b3a4b73576f302161def0993284118a7220b63b062"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    },
+    {
+      "txid": "1f9577374d5a93a304e2e4030ebeb08357b26564599b7a763818c31b9e391798",
+      "vout": 0,
+      "prevout": {
+        "scriptpubkey": "00146e85f31d7faf50c47ba7287e99762af4c8c60327",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 6e85f31d7faf50c47ba7287e99762af4c8c60327",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qd6zlx8tl4agvg7a89plfja327nyvvqe85z8w5h",
+        "value": 8912
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "3045022100919b7433837aa2216c647fb711f7cb57daed7e2e44fffe15418a0b967d61c57a022070146b9cbcaf97a203fe5e8ef3caf47183fb091b292f7408af71613191f8861701",
+        "037d7d52d662177e59e79f94b3a4b73576f302161def0993284118a7220b63b062"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "0014161ee977b5df4c254fb63926a59c21d8997a1721",
+      "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 161ee977b5df4c254fb63926a59c21d8997a1721",
+      "scriptpubkey_type": "v0_p2wpkh",
+      "scriptpubkey_address": "bc1qzc0wjaa4maxz2nak8yn2t8ppmzvh59epp6333w",
+      "value": 20032
+    }
+  ]
+}

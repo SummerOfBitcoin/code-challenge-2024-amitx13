@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "e50f1e77ebb4c1db7f8f801f88bcde2e4fe786ef9f6bb1c1c44b432f9b5aaaba",
+      "vout": 0,
+      "prevout": {
+        "scriptpubkey": "00147228a193dce767b1aa1a33fccd45ebd87ec4909d",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 7228a193dce767b1aa1a33fccd45ebd87ec4909d",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qwg52ry7uuanmr2s6x07v630tmplvfyyaknqwea",
+        "value": 389400
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "30450221008933879845781727d892e3c71e20b674fb4a72b651e7ddef06d94300405ca2000220454189c92a7b9ce0393864731bc87786bc46c1f808c479597ed5a33c426165d001",
+        "020490fc07c9e62854d91de40312281a25224f868e634723bb1b7af581020f0000"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    },
+    {
+      "txid": "bf03d425af408caba97a7cc2920f909aa4324afd8a2445a8953cca46ca4968b9",
+      "vout": 1,
+      "prevout": {
+        "scriptpubkey": "0014627a5c07ef55ab06f157a7aafe550f01d4156a67",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 627a5c07ef55ab06f157a7aafe550f01d4156a67",
+        "scriptpubkey_type": "v0_p2wpkh",
+        "scriptpubkey_address": "bc1qvfa9cpl02k4sdu2h5740u4g0q82p26n8c7w4av",
+        "value": 47408
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "3045022100801c14c7e9f5147c3dbab620b91073fb6adab736a813d4dc3f188d10ed8f440f022012c8ea1bf321121ec448967c27f63ab1ec5ba2c44fa882f5e64a8e92c09fb01801",
+        "03ab96c7f81209b17a7982c7d952b48ecd05d6587dbbb335316835202de7ca981b"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "76a914aada78c62fe38772d7f1d103fdcdf19508845e7288ac",
+      "scriptpubkey_asm": "OP_DUP OP_HASH160 OP_PUSHBYTES_20 aada78c62fe38772d7f1d103fdcdf19508845e72 OP_EQUALVERIFY OP_CHECKSIG",
+      "scriptpubkey_type": "p2pkh",
+      "scriptpubkey_address": "1GaPbJBG3MUwLYhppNVu8yP8CYreeArEDB",
+      "value": 434828
+    }
+  ]
+}

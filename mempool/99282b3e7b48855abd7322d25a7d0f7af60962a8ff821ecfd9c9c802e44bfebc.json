@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "a6b275fcaa3d848f9e750fcd8691ecdba8c884946eafd3303ff494aa11c1fd0e",
+      "vout": 1,
+      "prevout": {
+        "scriptpubkey": "002041e21222becb40dac9bcd3092960116f6ecd1ee19b841db254892b5830acc7a8",
+        "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_32 41e21222becb40dac9bcd3092960116f6ecd1ee19b841db254892b5830acc7a8",
+        "scriptpubkey_type": "v0_p2wsh",
+        "scriptpubkey_address": "bc1qg83pyg47edqd4jdu6vyjjcq3dahv68hpnwzpmvj53y44sv9vc75qdf2vpp",
+        "value": 41775490
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "",
+        "304402204a906ab41a373ca2456623ec3864d895561505a3825205758dd61c827f388d73022067163590cf4e56d1c6a69e564eb57e8598947f2b369c1cf3667835c6f0bdba5a01",
+        "304402207058428c8732bf8e8132184ec9906a34f310c521433010c15520734abfd8e9a6022020ef60c60a2a4689f3540943a87714769f352f8264553283b63b6e18d779e05b01",
+        "522103e3ab4fee9dd471f66d75d68addcb75ce8e9ba9183c7fc334d8064ae7e87e3b8a2103a3af0f49a21d29106ebeef9b3c3d69fc375c856a7153d97156a5b7a161ca6c2552ae"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295,
+      "inner_witnessscript_asm": "OP_PUSHNUM_2 OP_PUSHBYTES_33 03e3ab4fee9dd471f66d75d68addcb75ce8e9ba9183c7fc334d8064ae7e87e3b8a OP_PUSHBYTES_33 03a3af0f49a21d29106ebeef9b3c3d69fc375c856a7153d97156a5b7a161ca6c25 OP_PUSHNUM_2 OP_CHECKMULTISIG"
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "00147452a348ef1de3316cf7c2aae2feb97a9b9f034c",
+      "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_20 7452a348ef1de3316cf7c2aae2feb97a9b9f034c",
+      "scriptpubkey_type": "v0_p2wpkh",
+      "scriptpubkey_address": "bc1qw3f2xj80rh3nzm8hc24w9l4e02de7q6v4xapqs",
+      "value": 127178
+    },
+    {
+      "scriptpubkey": "002041e21222becb40dac9bcd3092960116f6ecd1ee19b841db254892b5830acc7a8",
+      "scriptpubkey_asm": "OP_0 OP_PUSHBYTES_32 41e21222becb40dac9bcd3092960116f6ecd1ee19b841db254892b5830acc7a8",
+      "scriptpubkey_type": "v0_p2wsh",
+      "scriptpubkey_address": "bc1qg83pyg47edqd4jdu6vyjjcq3dahv68hpnwzpmvj53y44sv9vc75qdf2vpp",
+      "value": 41643181
+    }
+  ]
+}

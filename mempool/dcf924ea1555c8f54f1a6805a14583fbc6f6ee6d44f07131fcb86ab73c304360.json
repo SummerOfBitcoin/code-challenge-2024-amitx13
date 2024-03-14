@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "locktime": 0,
+  "vin": [
+    {
+      "txid": "febf3c02a6d6478185bcd552e5cc3f1b32fbce741f977edf12a5b8256f4ceb76",
+      "vout": 2,
+      "prevout": {
+        "scriptpubkey": "51206fdb72059b162a1366d35a60247217a8662a8df2fdd8498b6baf31ace5a2129d",
+        "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 6fdb72059b162a1366d35a60247217a8662a8df2fdd8498b6baf31ace5a2129d",
+        "scriptpubkey_type": "v1_p2tr",
+        "scriptpubkey_address": "bc1pdldhypvmzc4pxekntfszgush4pnz4r0jlhvynzmt4uc6eedzz2wsu4465p",
+        "value": 106000
+      },
+      "scriptsig": "",
+      "scriptsig_asm": "",
+      "witness": [
+        "2c2e1d71673103d7b50eaac6e7544b98915fa5fa3f984254e919abeb362f0363bbe9c840e7670e15a4a316e06cf85ceeb8d28f86ad27262c2877737add461954"
+      ],
+      "is_coinbase": false,
+      "sequence": 4294967295
+    }
+  ],
+  "vout": [
+    {
+      "scriptpubkey": "51206fdb72059b162a1366d35a60247217a8662a8df2fdd8498b6baf31ace5a2129d",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 6fdb72059b162a1366d35a60247217a8662a8df2fdd8498b6baf31ace5a2129d",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pdldhypvmzc4pxekntfszgush4pnz4r0jlhvynzmt4uc6eedzz2wsu4465p",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "51206fdb72059b162a1366d35a60247217a8662a8df2fdd8498b6baf31ace5a2129d",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 6fdb72059b162a1366d35a60247217a8662a8df2fdd8498b6baf31ace5a2129d",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pdldhypvmzc4pxekntfszgush4pnz4r0jlhvynzmt4uc6eedzz2wsu4465p",
+      "value": 600
+    },
+    {
+      "scriptpubkey": "51206fdb72059b162a1366d35a60247217a8662a8df2fdd8498b6baf31ace5a2129d",
+      "scriptpubkey_asm": "OP_PUSHNUM_1 OP_PUSHBYTES_32 6fdb72059b162a1366d35a60247217a8662a8df2fdd8498b6baf31ace5a2129d",
+      "scriptpubkey_type": "v1_p2tr",
+      "scriptpubkey_address": "bc1pdldhypvmzc4pxekntfszgush4pnz4r0jlhvynzmt4uc6eedzz2wsu4465p",
+      "value": 101845
+    }
+  ]
+}
