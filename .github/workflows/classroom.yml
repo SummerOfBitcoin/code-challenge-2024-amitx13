@@ -1,0 +1,37 @@
+name: Autograding Tests
+'on':
+  - push
+  - workflow_dispatch
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Download mempool
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+        with:
+          owner: 'SummerOfBitcoin'
+          repository: 'code-challenge-2024-mempool'
+      - name: Validate block
+        id: validate-block
+        uses: SummerOfBitcoin/code-challenge-2024-grader@v2.8
+        with:
+          test-name: 'Validate block '
+          command: chmod +x ./run.sh && ./run.sh
+          timeout: 10
+          max-fee: 20616923
+          max-score: 100
+          passing-score: 60
+      - name: Autograding Reporter
+        uses: SummerOfBitcoin/autograding-grading-reporter@v2.2
+        env:
+          VALIDATE-BLOCK_RESULTS: "${{steps.validate-block.outputs.result}}"
+        with:
+          runners: validate-block
