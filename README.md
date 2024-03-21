@@ -50,6 +50,9 @@ In this challenge, it's crucial to understand and adhere to the following restri
 - **Permissible Libraries:** The use of standard cryptographic libraries, such as secp256k1 for elliptic curve cryptography, and standard hashing libraries (e.g., for SHA-256) is allowed and encouraged. These libraries are essential for implementing the cryptographic underpinnings of bitcoin without reinventing the wheel.
  - **Implement the Mining Algorithm Yourself:** You are required to implement the mining algorithm on your own. This includes creating a way to correctly form a block header, calculate the hash, and meet the challenge of finding a hash below a certain target.
 
+### Plagiarism Policy:
+Our plagiarism detection checker thoroughly identifies any instances of copying or cheating. Participants are required to publish their solutions in the designated repository, which is private and accessible only to the individual and the administrator. Solutions should not be shared publicly or with peers. In case of plagiarism, both parties involved will be directly disqualified to maintain fairness and integrity.
+
 ### AI Usage Disclaimer:
 You may use AI tools like ChatGPT to gather information and explore alternative approaches, but avoid relying solely on AI for complete solutions. Verify and validate any insights obtained and maintain a balance between AI assistance and independent problem-solving.
 
