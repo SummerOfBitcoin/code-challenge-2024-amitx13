@@ -11,7 +11,7 @@ module.exports.mineBlock = (merkleRoot) => {
     const prevBlock = "0000000000000000000000000000000000000000000000000000000000000000"
     const time = Math.floor(new Date().getTime() / 1000);
     const target = Buffer.from('00000ffff0000000000000000000000000000000000000000000000000000000', 'hex')
-    const bits = "1f00ffff";
+    const bits = "ffff001f";
     let nonce = 1;
     while (true) {
         const out = intToLittleEndianBytes(nonce)
