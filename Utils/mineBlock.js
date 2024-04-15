@@ -1,36 +1,25 @@
 const { sha256 } = require("js-sha256");
 const { intToLittleEndianBytes } = require("./intToLittleEndianBytes")
+
+const hash256 = (input) => {
+    return sha256(Buffer.from(sha256(Buffer.from(input, 'hex')), "hex"));
+}
+
+
 module.exports.mineBlock = (merkleRoot) => {
-    let blockHeaderHex = "";
-    const version = 0x00000004;
+    const version = intToLittleEndianBytes(0x00000004).map(b => b.toString(16).padStart(2, '0')).join('');
     const prevBlock = "0000000000000000000000000000000000000000000000000000000000000000"
     const time = Math.floor(new Date().getTime() / 1000);
+    const target = Buffer.from('00000ffff0000000000000000000000000000000000000000000000000000000', 'hex')
     const bits = "1f00ffff";
     let nonce = 1;
     while (true) {
-        const blockHeader = {
-            version,
-            prevBlock,
-            merkleRoot,
-            time,
-            bits,
-            nonce,
-        };
-        const blockHash = sha256(sha256(JSON.stringify(blockHeader)));
-        let valid = true;
-        for (let i = 0; i < bits.length; i++) {
-            if (parseInt(blockHash[i], 16) > parseInt(bits[i], 16)) {
-                valid = false;
-                break;
-            } else if (parseInt(blockHash[i], 16) < parseInt(bits[i], 16)) {
-                break;
-            }
-        }
-        if (valid) {
-            const out = intToLittleEndianBytes(nonce)
-            const finalNonce = out.map(b => b.toString(16).padStart(2, '0')).join('');
-            blockHeaderHex = intToLittleEndianBytes(version).map(b => b.toString(16).padStart(2, '0')).join('')+prevBlock+merkleRoot+Buffer.from(time.toString(16), "hex").reverse().toString("hex")+Buffer.from(bits, "hex").reverse().toString("hex")+finalNonce
-            return blockHeaderHex;
+        const out = intToLittleEndianBytes(nonce)
+        const finalNonce = out.map(b => b.toString(16).padStart(2, '0')).join('');
+        const blockHeader = version + prevBlock + merkleRoot + Buffer.from(time.toString(16), "hex").reverse().toString("hex") + bits + finalNonce
+        const blockHash = Buffer.from(hash256(blockHeader), "hex").reverse()
+        if (target.compare(blockHash) > 0) {
+            return blockHeader; // Return block header buffer as hex string
         }
         nonce++;
     }

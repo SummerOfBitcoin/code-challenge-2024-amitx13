@@ -88,11 +88,9 @@ function main() {
         }
     });
     const transactionIDs = [...transactions.map(tx => tx)];
-    /* const out = transactions.map(tx => `"${tx}"`).join(',\n');
-    const outputString = `[${out}]`;
-    fs.writeFileSync('invalid.txt', outputString); */
+
     merkleRoot = generateMerkleRoot(transactionIDs)
-    /* console.log(merkleRoot) */
+
     const blockHeader = mineBlock(merkleRoot);
 
     const coinbaseTransaction = coinBaseTransaction(amt, merkleRoot); // Constructing coinbase transaction
