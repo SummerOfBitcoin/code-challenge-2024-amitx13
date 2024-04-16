@@ -13,7 +13,7 @@ const { coinBaseTransaction } = require("./Utils/coinBaseTransaction")
 function main() {
 
     const mempoolFiles = readMempool();
-    const transactions = [];
+    const transactions = ["0000000000000000000000000000000000000000000000000000000000000000"];
     let amt = 650000000;
     let merkleRoot = "";
     mempoolFiles.forEach((file) => {
@@ -89,7 +89,7 @@ function main() {
     });
     const transactionIDs = [...transactions.map(tx => tx)];
 
-    merkleRoot = generateMerkleRoot(transactionIDs)
+    merkleRoot = generateMerkleRoot(transactions)
 
     const blockHeader = mineBlock(merkleRoot);
 
