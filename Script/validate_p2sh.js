@@ -3,6 +3,8 @@ const RIPEMD160 = require('ripemd160')
 const { Base58 } = require("../Utils/Base58")
 const { verifySignature } = require("../Utils/verifySignature")
 const { encode_compact } = require("../Utils/encode_compact")
+const { intToLittleEndianBytes } = require("../Utils/intToLittleEndianBytes.js")
+
 
 module.exports.validate_p2sh = (prevTrnx, msgHash, transactionData, index) => {
     try {
@@ -106,7 +108,7 @@ module.exports.validate_p2sh = (prevTrnx, msgHash, transactionData, index) => {
                         let str = prevTrnx.witness[prevTrnx.witness.length - 1].slice(2)
                         let publicKeys = str.match(/.{68}/g);
                         for (let i = 1; i < prevTrnx.witness.length - 1; i++) {
-                            let signature = prevTrnx.witness[j]
+                            let signature = prevTrnx.witness[i]
                             for (let j = 0; j < publicKeys.length; j++) {
                                 let publicKey = publicKeys[i].slice(2);
                                 let result = verifySignature(signature, publicKey, hashMessage)
