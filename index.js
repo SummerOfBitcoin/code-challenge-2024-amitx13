@@ -120,10 +120,10 @@ function main() {
                     break;
                 }
             }
-            /* if (maxLength > 2) {
+            if (maxLength > 8) {
                 verify = false;
                 break;
-            } */
+            }
         }
         if (verify && input_value > output_value) {
 
@@ -131,13 +131,12 @@ function main() {
             const msgHash = calculateMessageHash(transactionData);
             for (const [index, prevTrnx] of transactionData.vin.entries()) {
                 if (prevTrnx.prevout.scriptpubkey_type === "p2pkh") {
-
+                    isVerify = false; break;
                     let res = validate_p2pkh(prevTrnx, msgHash, transactionData, index);
                     if (res) { isVerify = true; continue; }
                     else isVerify = false; break;
                 }
                 if (prevTrnx.prevout.scriptpubkey_type === "p2sh") {
-
                     let res = validate_p2sh(prevTrnx, msgHash, transactionData, index);
                     if (res) { isVerify = true; continue; }
                     else isVerify = false; break;
@@ -170,7 +169,7 @@ function main() {
     transactions.sort((a, b) => b.fee - a.fee);
 
     // Select the top 70 transactions
-    transactions = transactions.slice(0, 67);
+    transactions = transactions.slice(0, 4100);
 
     let transactionIDs = ["0000000000000000000000000000000000000000000000000000000000000000"]
     transactions.map(tx => {

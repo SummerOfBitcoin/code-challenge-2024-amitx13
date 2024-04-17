@@ -9,24 +9,20 @@ module.exports.calculateTransactionHex = (trnx) => {
         const version = ver.map(b => b.toString(16).padStart(2, '0')).join('');
         const ltime = intToLittleEndianBytes(trnx.locktime);
         const locktime = ltime.map(b => b.toString(16).padStart(2, '0')).join('');
-
         const inLength = encode_compact(trnx.vin.length)
         const outLength = encode_compact(trnx.vout.length)
-        const witnessExist = trnx.vin.map((script) => {
-            if (script.prevout.scriptpubkey_type === "p2sh") {
+        let witnessExist = false;
+        trnx.vin.map(script => {
+            if (
+                script.prevout.scriptpubkey_type === "p2sh" ||
+                script.prevout.scriptpubkey_type === "v0_p2wpkh" ||
+                script.prevout.scriptpubkey_type === "v0_p2wsh" ||
+                script.prevout.scriptpubkey_type === "v1_p2tr"
+            ) {
+                witnessExist = true;
+            }
+        });
 
-                return true;
-            }
-            if (script.prevout.scriptpubkey_type === "v0_p2wpkh") {
-                return true;
-            }
-            if (script.prevout.scriptpubkey_type === "v0_p2wsh") {
-                return true;
-            }
-            if (script.prevout.scriptpubkey_type === "v1_p2tr") {
-                return true;
-            }
-        })
         let msgHash;
         if (witnessExist) {
             msgHash = `${version}0001${inLength}`;
@@ -54,7 +50,8 @@ module.exports.calculateTransactionHex = (trnx) => {
                 if (prevTrnx.witness) {
                     const Script = prevTrnx.scriptsig;
                     let len = prevTrnx.scriptsig.length
-                    len = (len / 2).toString(16)
+                    len = (len / 2)
+                    len = encode_compact(len)
                     const redeemScript = `${len}${Script}`;
                     msgHash += `${rTxid}${index}${redeemScript}${sequence}`
                 }
@@ -72,14 +69,15 @@ module.exports.calculateTransactionHex = (trnx) => {
         msgHash += `${outLength}`;
         for (const vTrnx of trnx.vout) {
             let value = Buffer.alloc(8);
-            let vout = vTrnx.value.toString(16);
+            let vout = vTrnx.value.toString(16)
             if (vout.length % 2 != 0) {
                 vout = "0" + vout;
             }
             let v = Buffer.from(vout, "hex").reverse().toString("hex");
             value.write(v, "hex");
             let len = vTrnx.scriptpubkey.length
-            len = (len / 2).toString(16)
+            len = (len / 2)
+            len = encode_compact(len)
             const scriptpubkey = `${len}${vTrnx.scriptpubkey}`;
             msgHash += `${value.toString("hex")}${scriptpubkey}`
         }
@@ -90,8 +88,13 @@ module.exports.calculateTransactionHex = (trnx) => {
                     msgHash += `${tlength}`
                     data.witness.forEach((wData) => {
                         let len = wData.length
-                        len = (len / 2).toString(16)
-                        msgHash += `${len}${wData}`;
+                        if (len === 0) {
+                            msgHash += `00`;
+                        } else {
+                            len = (len / 2)
+                            len = encode_compact(len)
+                            msgHash += `${len}${wData}`;
+                        }
                     })
                 }
             })
@@ -100,7 +103,6 @@ module.exports.calculateTransactionHex = (trnx) => {
         else {
             msgHash += `${locktime.toString("hex")}`
         }
-
         return msgHash;
 
     }
