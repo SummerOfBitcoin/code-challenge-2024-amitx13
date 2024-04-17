@@ -67,7 +67,6 @@ module.exports.validate_p2wsh = (prevTrnx, msgHash, transactionData, index) => {
                     }
                 }
             }
-            //Returning TRUE if OP_CHECKSIG returns 1 and FALSE if OP_CHECKSIG returns 0
             return verify;
         } else {
             return false

@@ -7,7 +7,6 @@ const hash256 = (input) => {
     return sha256(Buffer.from(sha256(Buffer.from(input, 'hex')), "hex"));
 }
 
-
 const WITNESS_RESERVED_VALUE = Buffer.from(
     '0000000000000000000000000000000000000000000000000000000000000000',
     'hex',
@@ -29,6 +28,7 @@ module.exports.coinBaseTransaction = (amt) => {
     const scriptpubkey = "1802d4ce0c486579206974277320406D697450726173616420"
     const sequence = "ffffffff"
     const outCount = "02"
+
     let value = Buffer.alloc(8);
     let val = amt.toString(16);
     if (val.length % 2 != 0) {
@@ -36,13 +36,12 @@ module.exports.coinBaseTransaction = (amt) => {
     }
     let v = Buffer.from(val, "hex").reverse().toString("hex");
     value.write(v, "hex");
+
     const voutScriptpubkey = "1976a914edf10a7fac6b32e24daa5305c723f3de58db1bc888ac"
     const witnessamount = "0000000000000000";
-
     const txids = readFileSync('./validTrxn.txt', 'utf8').trim().split('\n')
-
-
     const wtxids = ["0000000000000000000000000000000000000000000000000000000000000000"]
+
     for (let i = 1; i < txids.length; i++) {
         const fileName = sha256(Buffer.from(`${txids[i]}`, "hex"))
         const tx = JSON.parse(readFileSync(`./mempool/${fileName}.json`))

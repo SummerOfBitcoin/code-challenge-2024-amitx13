@@ -11,6 +11,7 @@ module.exports.calculateTransactionHex = (trnx) => {
         const locktime = ltime.map(b => b.toString(16).padStart(2, '0')).join('');
         const inLength = encode_compact(trnx.vin.length)
         const outLength = encode_compact(trnx.vout.length)
+
         let witnessExist = false;
         trnx.vin.map(script => {
             if (
@@ -33,9 +34,8 @@ module.exports.calculateTransactionHex = (trnx) => {
 
         for (const prevTrnx of trnx.vin) {
             const rTxid = Buffer.from(prevTrnx.txid, 'hex').reverse().toString('hex');
-            const output = intToLittleEndianBytes(prevTrnx.vout); //convert to 4byte little ending
+            const output = intToLittleEndianBytes(prevTrnx.vout);
             const index = output.map(b => b.toString(16).padStart(2, '0')).join('');
-            //const sequence = Buffer.from(prevTrnx.sequence.toString(16), "hex").reverse().toString("hex"); //convert to hex
             const seq = intToLittleEndianBytes(prevTrnx.sequence)
             const sequence = seq.map(b => b.toString(16).padStart(2, '0')).join('');
 
@@ -96,6 +96,8 @@ module.exports.calculateTransactionHex = (trnx) => {
                             msgHash += `${len}${wData}`;
                         }
                     })
+                } else {
+                    msgHash += `00`;
                 }
             })
             msgHash += `${locktime.toString("hex")}`
