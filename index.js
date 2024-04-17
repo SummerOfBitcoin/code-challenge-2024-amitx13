@@ -120,7 +120,7 @@ function main() {
                     break;
                 }
             }
-            /* if (maxLength > 7) {
+            /* if (maxLength > 2) {
                 verify = false;
                 break;
             } */
@@ -143,13 +143,11 @@ function main() {
                     else isVerify = false; break;
                 }
                 if (prevTrnx.prevout.scriptpubkey_type === "v0_p2wpkh") {
-
                     let res = validate_p2wpkh(prevTrnx, msgHash, transactionData, index);
                     if (res) { isVerify = true; continue; }
                     else isVerify = false; break;
                 }
                 if (prevTrnx.prevout.scriptpubkey_type === "v0_p2wsh") {
-
                     let res = validate_p2wsh(prevTrnx, msgHash, transactionData, index);
                     if (res) { isVerify = true; continue; }
                     else isVerify = false; break;
@@ -172,7 +170,7 @@ function main() {
     transactions.sort((a, b) => b.fee - a.fee);
 
     // Select the top 5300 transactions
-    transactions = transactions.slice(0, 90);
+    //transactions = transactions.slice(0, 90);
 
     let transactionIDs = []
     transactions.map(tx => {
