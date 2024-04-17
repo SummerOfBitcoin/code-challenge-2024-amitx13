@@ -170,7 +170,7 @@ function main() {
     transactions.sort((a, b) => b.fee - a.fee);
 
     // Select the top 70 transactions
-    transactions = transactions.slice(0, 70);
+    transactions = transactions.slice(0, 67);
 
     let transactionIDs = ["0000000000000000000000000000000000000000000000000000000000000000"]
     transactions.map(tx => {
