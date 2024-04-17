@@ -169,10 +169,10 @@ function main() {
     // Sort transactions based on fees in descending order
     transactions.sort((a, b) => b.fee - a.fee);
 
-    // Select the top 5300 transactions
-    //transactions = transactions.slice(0, 90);
+    // Select the top 70 transactions
+    transactions = transactions.slice(0, 70);
 
-    let transactionIDs = []
+    let transactionIDs = ["0000000000000000000000000000000000000000000000000000000000000000"]
     transactions.map(tx => {
         const msgHash = calculateMessageHash(tx.transactionData);
         transactionIDs.push(Buffer.from(sha256(Buffer.from(sha256(Buffer.from(msgHash.slice(0, -8), 'hex')), 'hex')), 'hex').reverse().toString('hex'))
@@ -183,7 +183,10 @@ function main() {
     //console.log(merkleRoot)
     const blockHeader = mineBlock(merkleRoot);
 
-    const coinbaseTransaction = coinBaseTransaction(totalFees, merkleRoot); // Constructing coinbase transaction
+    const validTrxn = `${transactionIDs.join('\n')}`;
+    fs.writeFileSync('validTrxn.txt', validTrxn);
+    //calculate witness commitment
+    const coinbaseTransaction = coinBaseTransaction(totalFees); // Constructing coinbase transaction
 
     const output = `${blockHeader}\n${coinbaseTransaction}\n${transactionIDs.join('\n')}`;
     fs.writeFileSync('output.txt', output);

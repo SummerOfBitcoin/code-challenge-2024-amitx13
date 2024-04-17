@@ -1,4 +1,7 @@
 const { sha256 } = require("js-sha256");
+const { generateMerkleRoot } = require("./generateMerkleRoot")
+const { calculateTransactionHex } = require("./calculateTransactionHex")
+const { readFileSync } = require('fs')
 
 const hash256 = (input) => {
     return sha256(Buffer.from(sha256(Buffer.from(input, 'hex')), "hex"));
@@ -10,7 +13,13 @@ const WITNESS_RESERVED_VALUE = Buffer.from(
     'hex',
 )
 
-module.exports.coinBaseTransaction = (amt, root) => {
+const calculateWitnessCommitment = (wtxids) => {
+    const witnessRoot = generateMerkleRoot(wtxids)
+    const witnessReservedValue = WITNESS_RESERVED_VALUE.toString('hex')
+    return hash256(witnessRoot + witnessReservedValue)
+}
+
+module.exports.coinBaseTransaction = (amt) => {
     const ver = "01000000"
     const marker = "00"
     const flag = "01"
@@ -29,9 +38,20 @@ module.exports.coinBaseTransaction = (amt, root) => {
     value.write(v, "hex");
     const voutScriptpubkey = "1976a914edf10a7fac6b32e24daa5305c723f3de58db1bc888ac"
     const witnessamount = "0000000000000000";
-    const witnessReserved = WITNESS_RESERVED_VALUE.toString('hex')
-    const witnessReservedValue = hash256(root + witnessReserved)
-    let witnessScriptpubkey = `6a24aa21a9ed${witnessReservedValue}`
+
+    const txids = readFileSync('./validTrxn.txt', 'utf8').trim().split('\n')
+
+
+    const wtxids = ["0000000000000000000000000000000000000000000000000000000000000000"]
+    for (let i = 1; i < txids.length; i++) {
+        const fileName = sha256(Buffer.from(`${txids[i]}`, "hex"))
+        const tx = JSON.parse(readFileSync(`./mempool/${fileName}.json`))
+        const parsedHex = calculateTransactionHex(tx);
+        const wtxid = Buffer.from(sha256(Buffer.from(sha256(Buffer.from(parsedHex, 'hex')), 'hex')), 'hex').reverse().toString('hex')
+        wtxids.push(wtxid)
+    }
+    const witnessCommitment = calculateWitnessCommitment(wtxids)
+    let witnessScriptpubkey = `6a24aa21a9ed${witnessCommitment}`
     let len = witnessScriptpubkey.length
     len = (len / 2).toString(16)
     let FinalwitnessScriptpubkey = `${len}${witnessScriptpubkey}`

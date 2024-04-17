@@ -59,76 +59,44 @@ module.exports.validate_p2sh = (prevTrnx, msgHash, transactionData, index) => {
         const hash = `05${PKH}${checksum}`
         const generatedAddress = Base58(Buffer.from(hash, "hex"))
         if (generatedAddress === address) {
-            if (prevTrnx.scriptsig.length > 288) {
-                let scriptArray = prevTrnx.scriptsig_asm.split(" ");
-                let signatures = [];
-                let publicKeys;
-                for (let i = 0; i < scriptArray.length; i++) {
-                    if (scriptArray[i] === "OP_PUSHBYTES_72" || scriptArray[i] === "OP_PUSHBYTES_71") {
-                        if (scriptArray[i + 1].slice(0, 2) === "30") {
-                            signatures.push(scriptArray[i + 1]);
-                        } else {
-                            let str = scriptArray[i + 1].slice(2)
-                            publicKeys = str.match(/.{68}/g);
-                        }
-                    }
-                }
-                let len = scriptArray[scriptArray.length - 1].length
+            const [, reedemscript] = prevTrnx.scriptsig_asm.split(" ");
+            const SHA256_PKH_HASH = sha256(Buffer.from(reedemscript, 'hex'));
+            const Generated_PKH = new RIPEMD160().end(Buffer.from(SHA256_PKH_HASH, 'hex')).read().toString('hex');
+            if (prevTrnx.witness.length >= 3) {
+                let len = prevTrnx.witness[prevTrnx.witness.length - 1].length
                 len = (len / 2).toString(16)
-                scriptCode = `${len}${scriptArray[scriptArray.length - 1]}`
+                scriptCode = `${len}${prevTrnx.witness[prevTrnx.witness.length - 1]}`
+            } else {
+                scriptCode = `1976a914${reedemscript.slice(4)}88ac`
+            }
+            if (Generated_PKH === PKH) {
+                //Performing OP_CHECKSIG
                 msg = ver + hashPrevouts + hashSequence + outpoint + scriptCode + inAmt.toString("hex") + sequence + hashOutputs + HashTypenLockTime
                 const hashMessage = Buffer.from(sha256(Buffer.from(sha256(Buffer.from(msg, 'hex')), "hex")), "hex")
-                for (let i = 0; i < signatures.length; i++) {
-                    for (let j = 0; j < publicKeys.length; j++) {
-                        let publicKey = publicKeys[j].slice(2);
-                        //code modification needed
-                        let result = verifySignature(signatures[i], publicKey, hashMessage)
-                        if (result) {
-                            return result;
-                        }
-                    }
-                }
-
-            } else {
-                const [, reedemscript] = prevTrnx.scriptsig_asm.split(" ");
-                const SHA256_PKH_HASH = sha256(Buffer.from(reedemscript, 'hex'));
-                const Generated_PKH = new RIPEMD160().end(Buffer.from(SHA256_PKH_HASH, 'hex')).read().toString('hex');
                 if (prevTrnx.witness.length >= 3) {
-                    let len = prevTrnx.witness[prevTrnx.witness.length - 1].length
-                    len = (len / 2).toString(16)
-                    scriptCode = `${len}${prevTrnx.witness[prevTrnx.witness.length - 1]}`
-                } else {
-                    scriptCode = `1976a914${reedemscript.slice(4)}88ac`
-                }
-                if (Generated_PKH === PKH) {
-                    //Performing OP_CHECKSIG
-                    msg = ver + hashPrevouts + hashSequence + outpoint + scriptCode + inAmt.toString("hex") + sequence + hashOutputs + HashTypenLockTime
-                    const hashMessage = Buffer.from(sha256(Buffer.from(sha256(Buffer.from(msg, 'hex')), "hex")), "hex")
-                    if (prevTrnx.witness.length >= 3) {
-                        let str = prevTrnx.witness[prevTrnx.witness.length - 1].slice(2)
-                        let publicKeys = str.match(/.{68}/g);
-                        for (let i = 1; i < prevTrnx.witness.length - 1; i++) {
-                            let signature = prevTrnx.witness[i]
-                            for (let j = 0; j < publicKeys.length; j++) {
-                                let publicKey = publicKeys[i].slice(2);
-                                let result = verifySignature(signature, publicKey, hashMessage)
-                                if (result) {
-                                    return result;
-                                }
+                    let str = prevTrnx.witness[prevTrnx.witness.length - 1].slice(2)
+                    let publicKeys = str.match(/.{68}/g);
+                    for (let i = 1; i < prevTrnx.witness.length - 1; i++) {
+                        let signature = prevTrnx.witness[i]
+                        for (let j = 0; j < publicKeys.length; j++) {
+                            let publicKey = publicKeys[i].slice(2);
+                            let result = verifySignature(signature, publicKey, hashMessage)
+                            if (result) {
+                                return result;
                             }
                         }
                     }
-                    else {
-                        const signature = prevTrnx.witness[0]
-                        const publicKey = prevTrnx.witness[1]
-                        let result = verifySignature(signature, publicKey, hashMessage)
-                        return result
-                    }
-
                 }
                 else {
-                    return false
+                    const signature = prevTrnx.witness[0]
+                    const publicKey = prevTrnx.witness[1]
+                    let result = verifySignature(signature, publicKey, hashMessage)
+                    return result
                 }
+
+            }
+            else {
+                return false
             }
         }
         else {
